@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E8E8E6"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView45"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="TextView"
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/consLayHead"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <LinearLayout
+            android:id="@+id/linLayHead"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintLeft_toLeftOf="@+id/consLayHead"
+            app:layout_constraintRight_toRightOf="@+id/consLayHead"
+            app:layout_constraintTop_toTopOf="@+id/consLayHead">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="LGMVIP"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="#FF6D00"
+                android:layout_marginLeft="440px"
+                android:gravity="center"/>
+
+            <Spinner
+                android:id="@+id/spinnerStates"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="4"
+            app:layout_constraintLeft_toLeftOf="@+id/linLayHead"
+            app:layout_constraintRight_toRightOf="@id/linLayHead"
+            app:layout_constraintTop_toBottomOf="@+id/linLayHead">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/consLayConfirmed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_button"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp">
+
+
+                <TextView
+                    android:id="@+id/textViewTotalConfirmed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Confirmed"
+                    android:textColor="#D50000"
+                    android:gravity="center"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="@+id/consLayConfirmed"
+                    app:layout_constraintRight_toRightOf="@+id/consLayConfirmed"
+                    app:layout_constraintBaseline_toTopOf="@id/consLayConfirmed"/>
+
+                <TextView
+                    android:id="@+id/textViewDeltaTotalConfirmed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="delta"
+                    android:textColor="#D50000"
+                    android:textSize="14dp"
+                    app:layout_constraintLeft_toLeftOf="@+id/consLayConfirmed"
+                    app:layout_constraintRight_toRightOf="@+id/consLayConfirmed"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewTotalConfirmed"/>
+
+                <TextView
+                    android:id="@+id/textViewTotalConfirmedData"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="total"
+                    android:textColor="#D50000"
+                    android:textSize="17dp"
+                    app:layout_constraintLeft_toLeftOf="@+id/consLayConfirmed"
+                    app:layout_constraintRight_toRightOf="@+id/consLayConfirmed"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewDeltaTotalConfirmed"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/consLayActive"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_button_active"
+                android:layout_marginRight="5dp">
+                <TextView
+                    android:id="@+id/textViewTotalActive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="Active"
+                    android:textColor="#304FFE"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="@+id/consLayActive"
+                    app:layout_constraintRight_toRightOf="@+id/consLayActive"
+                    app:layout_constraintTop_toTopOf="@id/consLayActive"/>
+
+                <TextView
+                    android:id="@+id/textViewTotalActiveData"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="total"
+                    android:textColor="#304FFE"
+                    android:textSize="17dp"
+                    app:layout_constraintLeft_toLeftOf="@+id/consLayActive"
+                    app:layout_constraintRight_toRightOf="@+id/consLayActive"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewTotalActive"
+                    app:layout_constraintBottom_toBottomOf="@+id/consLayActive"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/LayRecover"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_button_recover"
+                android:layout_marginRight="5dp">
+                <TextView
+                    android:id="@+id/textViewTotalRecovered"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Recovered"
+                    android:textColor="#058C3D"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="@id/LayRecover"
+                    app:layout_constraintRight_toRightOf="@id/LayRecover"
+                    app:layout_constraintBaseline_toTopOf="@id/LayRecover"/>
+
+                <TextView
+                    android:id="@+id/textViewDeltaTotalRecovered"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="delta"
+                    android:textColor="#058C3D"
+                    android:textSize="14dp"
+                    app:layout_constraintLeft_toLeftOf="@id/LayRecover"
+                    app:layout_constraintRight_toRightOf="@id/LayRecover"
+                    app:layout_constraintTop_toBottomOf="@id/textViewTotalRecovered"/>
+
+                <TextView
+                    android:id="@+id/textViewTotalRecoveredData"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="total"
+                    android:textColor="#058C3D"
+                    android:textSize="17dp"
+                    app:layout_constraintLeft_toLeftOf="@id/LayRecover"
+                    app:layout_constraintRight_toRightOf="@id/LayRecover"
+                    app:layout_constraintTop_toBottomOf="@id/textViewDeltaTotalRecovered"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layDeceased"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_button_deceased"
+                android:layout_marginRight="5dp">
+                <TextView
+                    android:id="@+id/textViewTotalDeceased"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:text="Deceased"
+                    android:textColor="#636363"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="@id/layDeceased"
+                    app:layout_constraintRight_toRightOf="@id/layDeceased"
+                    app:layout_constraintTop_toTopOf="@id/layDeceased"/>
+
+                <TextView
+                    android:id="@+id/textViewDeltaTotalDeceased"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="delta"
+                    android:textColor="#636363"
+                    android:textSize="14dp"
+                    app:layout_constraintLeft_toLeftOf="@id/layDeceased"
+                    app:layout_constraintRight_toRightOf="@id/layDeceased"
+                    app:layout_constraintTop_toBottomOf="@id/textViewTotalDeceased"/>
+
+                <TextView
+                    android:id="@+id/textViewTotalDeceasedData"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="total"
+                    android:textColor="#636363"
+                    android:textSize="17dp"
+                    app:layout_constraintLeft_toLeftOf="@id/layDeceased"
+                    app:layout_constraintRight_toRightOf="@id/layDeceased"
+                    app:layout_constraintTop_toBottomOf="@id/textViewDeltaTotalDeceased"/>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:id="@+id/layDistData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/consLayHead"
+        android:layout_marginTop="12dp">
+
+        <TextView
+            android:id="@+id/textViewDistLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="3dp"
+            android:layout_marginBottom="7dp"
+            android:layout_marginLeft="2dp"
+            android:layout_weight="2"
+            android:text="District"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:background="#CFCCCC"/>
+        <TextView
+            android:id="@+id/textViewConfirmedLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="3dp"
+            android:layout_marginBottom="7dp"
+            android:layout_marginLeft="2dp"
+            android:layout_weight="1"
+            android:text="Confirmed"
+            android:textSize="15dp"
+            android:gravity="center"
+            android:textColor="#D50000"
+            android:background="#CFCCCC"/>
+        <TextView
+            android:id="@+id/textViewActiveLable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="3dp"
+            android:layout_marginBottom="7dp"
+            android:layout_marginLeft="2dp"
+            android:layout_weight="1"
+            android:text="Active"
+            android:textSize="15dp"
+            android:gravity="center"
+            android:textColor="#304FFE"
+            android:background="#CFCCCC"/>
+        <TextView
+            android:id="@+id/textViewRecoveredLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="3dp"
+            android:layout_marginBottom="7dp"
+            android:layout_marginLeft="2dp"
+            android:layout_weight="1"
+            android:text="Recovered"
+            android:textSize="15dp"
+            android:gravity="center"
+            android:textColor="#058C3D"
+            android:background="#CFCCCC"/>
+        <TextView
+            android:id="@+id/textViewDeceasedLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="3dp"
+            android:layout_marginBottom="7dp"
+            android:layout_marginLeft="2dp"
+            android:layout_weight="1"
+            android:text="Deceased"
+            android:textSize="15dp"
+            android:gravity="center"
+            android:textColor="#636363"
+            android:background="#CFCCCC"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Body"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="165dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layDistData">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewData"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Body" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
